@@ -15,9 +15,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit local-git
 
-SRCREV = "bd19d1ee0d4c21945f156f75a8eb1cdafed2777a"
+SRCREV = "${FIREFLY_SDK_VERSION}"
 SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=rkaiq-2024_04_08; \
+	git://gitlab.com/firefly-linux/external/camera_engine_rkaiq.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
 	file://rkaiq_daemons.sh \
 "
 

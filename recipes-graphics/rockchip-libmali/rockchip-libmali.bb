@@ -10,9 +10,9 @@ LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a
 inherit local-git
 
 SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=libmali; \
+	git://gitlab.com/firefly-linux/external/libmali.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
 "
-SRCREV = "6696882361a70284cc9198f1841aff1efb760dab"
+SRCREV = "${FIREFLY_SDK_VERSION}"
 S = "${WORKDIR}/git"
 
 DEPENDS = "coreutils-native libdrm"

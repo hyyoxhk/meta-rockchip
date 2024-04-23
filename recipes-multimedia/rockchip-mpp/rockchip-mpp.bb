@@ -10,8 +10,8 @@ LIC_FILES_CHKSUM = " \
 
 inherit local-git
 
-SRCREV = "0de995aa8b98f0be666af18a0e0bb9dcec462039"
-SRC_URI = "git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=mpp-dev-2023_04_19;"
+SRCREV = "${FIREFLY_SDK_VERSION}"
+SRC_URI = "git://gitlab.com/firefly-linux/external/mpp.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH};"
 
 S = "${WORKDIR}/git"
 

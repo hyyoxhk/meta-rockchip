@@ -10,9 +10,9 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=d749e86a105281d7a44c2328acebc4b0"
 DEPENDS = "libdrm virtual/libgles2 virtual/libgbm"
 
 SRC_URI = " \
-	git://github.com/JeffyCN/drm-cursor.git;protocol=https;branch=master \
+	git://gitlab.com/firefly-linux/external/drm-cursor.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
 "
-SRCREV = "733510b21da23a7d9bc6976624e5a0dea14dc667"
+SRCREV = "${FIREFLY_SDK_VERSION}"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig
