@@ -4,9 +4,12 @@
 # long-description: Creates a GPT disk image for Rockchip boards
 
 # 0~32K: gpt
+
+part   --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
+part   --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --align 8192
+part   --source bootimg-partition  --fstype=vfat --label bootfs --active --fixed-size 100M
+part / --source rootfs --fstype=ext4 --label rootfs1 --fixed-size 1024M
+part   --source rootfs --fstype=ext4 --label rootfs2 --fixed-size 1024M
+part   --source rawcopy --sourceparams="file=smart-image-userfs-${DISTRO}-${MACHINE}.ext4" --fstype=ext4 --label userfs --fixed-size 64M
+
 bootloader --ptable gpt
-part --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
-part --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --align 8192
-part --source rawcopy --sourceparams="file=trust.img" --part-name trust
-part --source rawcopy --sourceparams="file=boot.img" --part-name boot
-part / --source rootfs --fstype ${RK_ROOTFS_TYPE} --part-name rootfs --uuid ${RK_ROOTDEV_UUID} --align 8192
