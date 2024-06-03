@@ -2,6 +2,7 @@
 # Released under the MIT license (see COPYING.MIT for the terms)
 
 require conf/machine/include/rockchip-arm64-common.inc
+require conf/machine/include/rockchip-updateimg.inc
 
 SOC_FAMILY := "rk3568"
 
