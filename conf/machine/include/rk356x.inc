@@ -13,3 +13,6 @@ MALI_GPU := "bifrost-g52"
 MALI_VERSION := "g2p0"
 
 RK_ISP_VERSION := "2.1"
+
+FIREFLY_SDK_BRANCH = "rk3588/firefly"
+FIREFLY_SDK_VERSION = "rk3588/linux_release_v1.1.1e"

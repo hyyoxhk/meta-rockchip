@@ -17,4 +17,4 @@ MALI_VERSION := "g6p0"
 RK_ISP_VERSION := "3.0"
 
 FIREFLY_SDK_BRANCH = "rk3588/firefly"
-FIREFLY_SDK_VERSION = "rk3588/linux_release_v1.4.0a"
+FIREFLY_SDK_VERSION = "rk3588/linux_release_v1.1.1e"
