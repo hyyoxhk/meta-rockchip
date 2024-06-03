@@ -7,6 +7,8 @@ SECTION = "libs"
 LICENSE = "LGPL-2.1-or-later"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d749e86a105281d7a44c2328acebc4b0"
 
+inherit local-git
+
 DEPENDS = "libdrm virtual/libgles2 virtual/libgbm"
 
 SRC_URI = " \
