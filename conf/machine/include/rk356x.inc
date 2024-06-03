@@ -5,9 +5,9 @@ require conf/machine/include/rockchip-arm64-common.inc
 
 SOC_FAMILY := "rk3568"
 
-PREFERRED_VERSION_linux-rockchip := "4.19%"
-LINUXLIBCVERSION := "4.19-custom%"
-OLDEST_KERNEL := "4.19"
+PREFERRED_VERSION_linux-rockchip := "5.10%"
+LINUXLIBCVERSION := "5.10-custom%"
+OLDEST_KERNEL := "5.10"
 
 MALI_GPU := "bifrost-g52"
 MALI_VERSION := "g2p0"
