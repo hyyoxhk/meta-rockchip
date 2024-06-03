@@ -1373,7 +1373,7 @@ index dbc338653b..1b7b730359 100644
 +    else:
 +        is_string = False
 +    if is_string:
-+        if count == 1: 
++        if count == 1:
 +            return TYPE_STRING, strings[0].decode()
 +        else:
 +            return TYPE_STRING, [s.decode() for s in strings[:-1]]
