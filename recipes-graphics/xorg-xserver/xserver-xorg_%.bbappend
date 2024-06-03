@@ -3,6 +3,8 @@
 
 DEPENDS:append = " automake-native autoconf-native util-macros-native font-util-native xtrans-native libxshmfence rockchip-librga"
 
+inherit local-git
+
 SRCREV = "${FIREFLY_SDK_VERSION}"
 SRC_URI:append = " git://gitlab.com/firefly-linux/external/xserver.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH};"
 SRC_URI:remove = "https://www.x.org/releases//individual/xserver/xorg-server-${PV}.tar.bz2"
