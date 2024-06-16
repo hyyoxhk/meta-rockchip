@@ -9,6 +9,8 @@ inherit local-git python3-dir
 require recipes-bsp/u-boot/u-boot.inc
 require recipes-bsp/u-boot/u-boot-common.inc
 
+UBOOT_INITIAL_ENV = "u-boot-initial-env"
+
 PROVIDES = "virtual/bootloader"
 
 DEPENDS += "bc-native dtc-native"
@@ -22,6 +24,7 @@ SRCREV_rkbin = "c41b714cacd249e3ef69b2bbe774da5095eefd72"
 SRC_URI = " \
 	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=u-boot; \
 	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=rkbin;name=rkbin;destsuffix=rkbin; \
+	file://fw_env.config \
 "
 
 SRCREV_FORMAT = "default_rkbin"
