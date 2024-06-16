@@ -6,11 +6,16 @@ require linux-rockchip.inc
 
 inherit local-git
 
-SRCREV = "${FIREFLY_SDK_VERSION}"
+SRCREV = "93f1dde055919b078f8954c3dd0d8d00e07e4811"
+
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/kernel.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
+	git://gitlab.com/hyyoxhk/linux-rk.git;protocol=https;nobranch=1;branch=main; \
 	file://${THISDIR}/files/cgroups.cfg \
 "
+
+S = "${WORKDIR}/git"
+B = "${WORKDIR}/build"
+
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 KERNEL_VERSION_SANITY_SKIP = "1"
@@ -20,8 +25,3 @@ SRC_URI:append = " ${@bb.utils.contains('IMAGE_FSTYPES', 'ext4', \
 		   'file://${THISDIR}/files/ext4.cfg', \
 		   '', \
 		   d)}"
-
-do_patch:append() {
-	sed -i 's/-I\($(BCMDHD_ROOT)\)/-I$(srctree)\/\1/g' \
-		${S}/drivers/net/wireless/rockchip_wlan/rkwifi/bcmdhd/Makefile
-}
