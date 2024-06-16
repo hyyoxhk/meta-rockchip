@@ -9,6 +9,8 @@ inherit local-git python3-dir
 require recipes-bsp/u-boot/u-boot.inc
 require recipes-bsp/u-boot/u-boot-common.inc
 
+UBOOT_INITIAL_ENV = "u-boot-initial-env"
+
 PROVIDES = "virtual/bootloader"
 
 DEPENDS += "bc-native dtc-native"
@@ -22,6 +24,7 @@ SRCREV_rkbin = "${FIREFLY_SDK_VERSION}"
 SRC_URI = " \
 	git://gitlab.com/hyyoxhk/uboot-rk.git;protocol=https;branch=main;name=uboot; \
 	git://gitlab.com/firefly-linux/rkbin.git;protocol=https;branch=${FIREFLY_SDK_BRANCH};name=rkbin;destsuffix=rkbin; \
+	file://fw_env.config \
 "
 
 SRCREV_FORMAT = "default_rkbin"
