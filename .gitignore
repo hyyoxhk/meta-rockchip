@@ -4,3 +4,6 @@
 *.orig
 *.rej
 *~
+.vscode/
+.cache/
+.vscode-ctags
