@@ -1,0 +1,12 @@
+[Unit]
+Description=Chromium OS Broadcom patchram utility
+Documentation=https://google.com/search?q=brcm_patchram_plus
+
+[Service]
+Type=simple
+ExecStartPre=-/usr/sbin/rfkill unblock all
+ExecStart=/usr/bin/brcm_patchram_plus --enable_hci --no2bytes --use_baudrate_for_download --tosleep 200000 --baudrate 1500000 --patchram /system/etc/firmware/BCM4343A1.hcd /dev/ttyS1
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
