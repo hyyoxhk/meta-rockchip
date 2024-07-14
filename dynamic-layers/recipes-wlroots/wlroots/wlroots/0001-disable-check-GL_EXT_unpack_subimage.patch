@@ -1,0 +1,31 @@
+From 785b4cb61ab806f17dcabce4ae418468fa7dd656 Mon Sep 17 00:00:00 2001
+From: He Yong <hyyoxhk@163.com>
+Date: Sun, 14 Jul 2024 22:11:31 +0800
+Subject: [PATCH] disable check GL_EXT_unpack_subimage
+
+Mali not support GL_EXT_unpack_subimage
+
+Upstream-Status: Inappropriate [Mali specific]
+---
+ render/gles2/renderer.c | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/render/gles2/renderer.c b/render/gles2/renderer.c
+index 8d060150..b789b7b9 100644
+--- a/render/gles2/renderer.c
++++ b/render/gles2/renderer.c
+@@ -731,11 +731,6 @@ struct wlr_renderer *wlr_gles2_renderer_create(struct wlr_egl *egl) {
+ 		free(renderer);
+ 		return NULL;
+ 	}
+-	if (!check_gl_ext(exts_str, "GL_EXT_unpack_subimage")) {
+-		wlr_log(WLR_ERROR, "GL_EXT_unpack_subimage not supported");
+-		free(renderer);
+-		return NULL;
+-	}
+ 
+ 	renderer->exts.EXT_read_format_bgra =
+ 		check_gl_ext(exts_str, "GL_EXT_read_format_bgra");
+-- 
+2.34.1
+
