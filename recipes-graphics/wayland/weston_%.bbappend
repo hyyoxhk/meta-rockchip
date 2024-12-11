@@ -3,7 +3,7 @@
 
 DEPENDS:append = " rockchip-librga"
 
-SRCREV = "${AUTOREV}"
-SRC_URI:append = " git://github.com/JeffyCN/weston;protocol=https;nobranch=1;branch=${@oe.utils.trim_version('${PV}', 2)}_2024_06_19;"
+SRCREV = "c6fc11584a908b4faa9d7046744f44666da5d4a8"
+SRC_URI:append = " git://github.com/JeffyCN/weston;protocol=https;nobranch=1;branch=11.0"
 SRC_URI:remove = "https://gitlab.freedesktop.org/wayland/weston/-/releases/${PV}/downloads/${BPN}-${PV}.tar.xz2"
 S = "${WORKDIR}/git"
