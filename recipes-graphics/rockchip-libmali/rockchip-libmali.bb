@@ -71,7 +71,6 @@ EXTRA_OEMESON = " \
 	-Dversion=${MALI_VERSION} \
 	-Dsubversion=${MALI_SUBVERSION} \
 	-Dplatform=${MALI_PLATFORM} \
-	-Dfirmware-dir=${nonarch_base_libdir}/firmware \
 "
 
 do_install:append () {
