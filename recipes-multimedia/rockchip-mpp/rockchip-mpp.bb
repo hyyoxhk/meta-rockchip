@@ -10,8 +10,8 @@ LIC_FILES_CHKSUM = " \
 
 inherit local-git
 
-SRCREV = "b29e4b798d28a5d0709bff87479d17f247645bc8"
-SRC_URI = "git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=mpp-dev-2024_06_27;"
+SRCREV = "8e10b8aad295c4364eff4bd6da2a816430c33f39"
+SRC_URI = "git://${YUNMI_GITLAB_URL}/board/external/mpp.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master;"
 
 S = "${WORKDIR}/git"
 

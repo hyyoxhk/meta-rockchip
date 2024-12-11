@@ -15,9 +15,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit local-git
 
-SRCREV = "bd19d1ee0d4c21945f156f75a8eb1cdafed2777a"
+SRCREV = "8800eff20f37bcdca9220825e3ef912c9170175d"
 SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;nobranch=1;branch=rkaiq-2024_04_08; \
+	git://${YUNMI_GITLAB_URL}/board/external/camera_engine_rkaiq.git;protocol=${YUNMI_GITLAB_PROTOCOL};nobranch=1;branch=master; \
 	file://rkaiq_daemons.sh \
 "
 

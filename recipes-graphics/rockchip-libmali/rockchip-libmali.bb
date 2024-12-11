@@ -10,9 +10,9 @@ LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a
 inherit local-git
 
 SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=libmali; \
+	git://${YUNMI_GITLAB_URL}/board/external/libmali.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master; \
 "
-SRCREV = "6696882361a70284cc9198f1841aff1efb760dab"
+SRCREV = "bb9b52c69f48656d0901ca4aa1626938d5335eb0"
 S = "${WORKDIR}/git"
 
 DEPENDS = "coreutils-native libdrm"
