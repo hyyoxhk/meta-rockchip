@@ -43,6 +43,8 @@ PACKAGES =+ " \
 	${PN}-ap6398s-wifi \
 	${PN}-ap6398s-bt \
 	${PN}-rtl8723ds-bt \
+	${PN}-ap6256-wifi \
+	${PN}-ap6256-bt \
 "
 
 FILES:${PN}-ap6181-wifi = " \
@@ -125,6 +127,15 @@ FILES:${PN}-ap6398s-bt = " \
 FILES:${PN}-rtl8723ds-bt = " \
 	${nonarch_base_libdir}/firmware/rtlbt/rtl8723d_config \
 	${nonarch_base_libdir}/firmware/rtlbt/rtl8723d_fw \
+"
+
+FILES:${PN}-ap6256-wifi = " \
+	${nonarch_base_libdir}/firmware/fw_bcm43456c5_ag.bin \
+	${nonarch_base_libdir}/firmware/fw_bcm43456c5_ag_mfg.bin \
+	${nonarch_base_libdir}/firmware/nvram_ap6256.txt \
+"
+FILES:${PN}-ap6256-bt = " \
+	${nonarch_base_libdir}/firmware/BCM4345C5.hcd \
 "
 
 FILES:${PN} = "*"
