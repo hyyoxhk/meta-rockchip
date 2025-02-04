@@ -19,6 +19,7 @@ SRCREV = "8800eff20f37bcdca9220825e3ef912c9170175d"
 SRC_URI = " \
 	git://${YUNMI_GITLAB_URL}/board/external/camera_engine_rkaiq.git;protocol=${YUNMI_GITLAB_PROTOCOL};nobranch=1;branch=master; \
 	file://rkaiq_daemons.sh \
+	file://ov13850_CMK-CT0116_Largan-50013A1.json \
 "
 
 S = "${WORKDIR}/git"
@@ -58,11 +59,7 @@ do_install:append () {
 	chrpath -d ${D}/${libdir}/libsmartIr.so
 
 	install -d ${D}${sysconfdir}/iqfiles
-	ln -sf isp3x ${S}/rkaiq/iqfiles/isp30
-
-	IQFILES_DIR="$(echo isp${RK_ISP_VERSION} | tr 'A-Z' 'a-z' | tr -d '.')"
-	install -m 0644 ${S}/rkaiq/iqfiles/$IQFILES_DIR/*.json \
-		${D}${sysconfdir}/iqfiles/
+	install -m 644 ${WORKDIR}/ov13850_CMK-CT0116_Largan-50013A1.json ${D}${sysconfdir}/iqfiles
 
 	install -d ${D}${sysconfdir}/init.d
 	install -m 0755 ${WORKDIR}/rkaiq_daemons.sh ${D}${sysconfdir}/init.d/
