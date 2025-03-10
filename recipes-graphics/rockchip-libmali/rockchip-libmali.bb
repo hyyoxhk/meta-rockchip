@@ -12,7 +12,7 @@ inherit local-git
 SRC_URI = " \
 	git://${YUNMI_GITLAB_URL}/board/external/libmali.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master; \
 "
-SRCREV = "bb9b52c69f48656d0901ca4aa1626938d5335eb0"
+SRCREV = "c45e68f5f440d4c0590fdfcdee290b6d591af51e"
 S = "${WORKDIR}/git"
 
 DEPENDS = "coreutils-native libdrm"
