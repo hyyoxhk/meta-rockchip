@@ -60,6 +60,11 @@ do_install:append () {
 
 	install -d ${D}${sysconfdir}/iqfiles
 	install -m 644 ${WORKDIR}/ov13850_CMK-CT0116_Largan-50013A1.json ${D}${sysconfdir}/iqfiles
+	ln -sf isp3x ${S}/rkaiq/iqfiles/isp30
+
+	IQFILES_DIR="$(echo isp${RK_ISP_VERSION} | tr 'A-Z' 'a-z' | tr -d '.')"
+	install -m 0644 ${S}/rkaiq/iqfiles/${IQFILES_DIR}/*.json \
+		${D}${sysconfdir}/iqfiles/
 
 	install -d ${D}${sysconfdir}/init.d
 	install -m 0755 ${WORKDIR}/rkaiq_daemons.sh ${D}${sysconfdir}/init.d/
