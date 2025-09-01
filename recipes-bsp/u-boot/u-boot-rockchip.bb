@@ -22,7 +22,7 @@ LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 SRCREV = "947908810939709ccf565b624889a5ecf22061cc"
 SRCREV_rkbin = "8350c611251e50410eabb29f7df66083efeb9551"
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/u-boot.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master; \
+	git://${YUNMI_GITLAB_URL}/board/u-boot.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=main; \
 	git://${YUNMI_GITLAB_URL}/board/rkbin.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master;name=rkbin;destsuffix=rkbin; \
 	file://fw_env.config \
 "
