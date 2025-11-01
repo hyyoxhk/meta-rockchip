@@ -8,8 +8,8 @@
 part   --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
 part   --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --align 8192
 part   --source bootimg-partition  --fstype=vfat --part-name bootfs --active --fixed-size 100M
-part / --source rootfs --fstype=squashfs --part-name rootfs1
-part   --source rootfs --fstype=squashfs --part-name rootfs2
+part / --source rootfs --fstype=ext4 --part-name rootfs_a
+part   --source rootfs --fstype=ext4 --part-name rootfs_b
 part   --source rawcopy --sourceparams="file=smart-image-userfs-${DISTRO}-${MACHINE}.ext4" --fstype=ext4 --part-name userfs --fixed-size 64M
 
 bootloader --ptable gpt
