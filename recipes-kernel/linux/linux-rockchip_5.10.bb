@@ -25,3 +25,5 @@ SRC_URI:append = " ${@bb.utils.contains('IMAGE_FSTYPES', 'ext4', \
 		   'file://${THISDIR}/files/ext4.cfg', \
 		   '', \
 		   d)}"
+
+MODULE_TARBALL_DEPLOY = "0"
