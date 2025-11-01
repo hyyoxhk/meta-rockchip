@@ -6,9 +6,9 @@ require linux-rockchip.inc
 
 inherit local-git
 
-SRCREV = "104f1013d6f9c347e4f96a76152a98e7f504e82c"
+SRCREV = "9a1cf01f1ae4d725b0a8ebc8b0992ad475c78fd4"
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/kernel.git;protocol=${YUNMI_GITLAB_PROTOCOL};nobranch=1;branch=main; \
+	git://${YUNMI_GITLAB_URL}/board/kernel.git;protocol=${YUNMI_GITLAB_PROTOCOL};nobranch=1;branch=yunmi/develop-5.10; \
 	file://${THISDIR}/files/cgroups.cfg \
 "
 
