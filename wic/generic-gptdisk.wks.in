@@ -10,6 +10,6 @@ part   --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --alig
 part   --source bootimg-partition  --fstype=vfat --part-name bootfs --active --fixed-size 100M
 part / --source rootfs --fstype=ext4 --part-name rootfs_a
 part   --source rootfs --fstype=ext4 --part-name rootfs_b
-part   --source rawcopy --sourceparams="file=smart-image-userfs-${DISTRO}-${MACHINE}.ext4" --fstype=ext4 --part-name userfs --fixed-size 64M
+part   --source rawcopy --sourceparams="file=smart-image-userfs-${MACHINE}.ext4" --fstype=ext4 --part-name userfs --fixed-size 64M
 
 bootloader --ptable gpt
