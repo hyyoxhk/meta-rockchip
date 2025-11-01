@@ -53,4 +53,4 @@ PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
 
 PREFERRED_RPROVIDER_lib32-initd-functions = "lib32-initscripts"
 
-RDEPENDS:${KERNEL_PACKAGE_NAME}-base = ""
+RRECOMMENDS:${KERNEL_PACKAGE_NAME}-base = ""
