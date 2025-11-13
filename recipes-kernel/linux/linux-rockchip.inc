@@ -1,7 +1,7 @@
 # Copyright (C) 2019, Fuzhou Rockchip Electronics Co., Ltd
 # Released under the MIT license (see COPYING.MIT for the terms)
 
-inherit python3-dir
+inherit python3-dir rockchip-fitimage
 
 DEPENDS:append = " openssl-native lz4-native ${PYTHON_PN}-native"
 
@@ -34,8 +34,6 @@ do_compile_kernelmodules:prepend() {
 }
 
 # Hack for rockchip style images
-KERNEL_IMAGETYPES:append = \
-	"${@' boot.img zboot.img' if d.getVar('ROCKCHIP_KERNEL_IMAGES') == '1' else ''}"
 python () {
     if not d.getVar('KERNEL_DEVICETREE'):
         raise bb.parse.SkipPackage('KERNEL_DEVICETREE is not specified!')
@@ -59,17 +57,4 @@ do_kernel_metadata:prepend() {
 		cat ${KBUILD_DEFCONFIGS:-$CONFIGS} > ${KBUILD_DEFCONFIG} || true
 	fi
 	cd -
-}
-
-# Link rockchip style images
-do_install:prepend() {
-	for image in $(ls "${B}/" | grep ".img$"); do
-		ln -rsf ${B}/${image} ${B}/arch/${ARCH}/boot/
-	done
-
-	if [ "${ROCKCHIP_KERNEL_COMPRESSED}" = "1" ]; then
-		if [ -r "${B}/zboot.img" ]; then
-			ln -rsf ${B}/zboot.img ${B}/arch/${ARCH}/boot/boot.img
-		fi
-	fi
 }
