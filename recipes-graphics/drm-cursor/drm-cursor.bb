@@ -12,9 +12,9 @@ inherit local-git
 DEPENDS = "libdrm virtual/libgles2 virtual/libgbm"
 
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/external/drm-cursor.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master \
+	git://${YUNMY_GITLAB_URL}/board/external/drm-cursor.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH} \
 "
-SRCREV = "23cebd5dd33a3073f296533954d4c211481891ab"
+SRCREV = "${YUNMY_SDK_VERSION}"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig

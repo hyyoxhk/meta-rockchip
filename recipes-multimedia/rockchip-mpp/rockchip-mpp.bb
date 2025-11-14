@@ -10,8 +10,8 @@ LIC_FILES_CHKSUM = " \
 
 inherit local-git
 
-SRCREV = "8e10b8aad295c4364eff4bd6da2a816430c33f39"
-SRC_URI = "git://${YUNMI_GITLAB_URL}/board/external/mpp.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master;"
+SRCREV = "${YUNMY_SDK_VERSION}"
+SRC_URI = "git://${YUNMY_GITLAB_URL}/board/external/mpp.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH};"
 
 S = "${WORKDIR}/git"
 

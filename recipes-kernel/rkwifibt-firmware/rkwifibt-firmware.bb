@@ -9,8 +9,8 @@ LIC_FILES_CHKSUM = "file://${RKBASE}/licenses/LICENSE.rockchip;md5=d63890e209bf0
 
 inherit local-git
 
-SRCREV = "df3081dd6a2aa9bcc2837328a6f90955c8a363a9"
-SRC_URI = "git://${YUNMI_GITLAB_URL}/board/external/rkwifibt.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master"
+SRCREV = "${YUNMY_SDK_VERSION}"
+SRC_URI = "git://${YUNMY_GITLAB_URL}/board/external/rkwifibt.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH}"
 
 S = "${WORKDIR}/git"
 

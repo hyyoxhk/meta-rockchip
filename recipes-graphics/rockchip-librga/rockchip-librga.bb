@@ -14,9 +14,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit local-git
 
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/external/linux-rga.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master; \
+	git://${YUNMY_GITLAB_URL}/board/external/linux-rga.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH}; \
 "
-SRCREV = "c6105b06ade0e5dc7f16924c7f0f5e9dcdb198bc"
+SRCREV = "${YUNMY_SDK_VERSION}"
 S = "${WORKDIR}/git"
 
 inherit meson pkgconfig

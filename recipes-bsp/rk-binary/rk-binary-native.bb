@@ -8,12 +8,12 @@ DESCRIPTION = "Rockchip binary tools"
 LICENSE = "LICENSE.rockchip"
 LIC_FILES_CHKSUM = "file://${RKBASE}/licenses/LICENSE.rockchip;md5=d63890e209bf038f44e708bbb13e4ed9"
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/rkbin.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master;name=rkbin \
-	git://${YUNMI_GITLAB_URL}/board/tools.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master;name=tools;destsuffix=git/extra;lfs=0 \
+	git://${YUNMY_GITLAB_URL}/board/rkbin.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH};name=rkbin \
+	git://${YUNMY_GITLAB_URL}/board/tools.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH};name=tools;destsuffix=git/extra;lfs=0 \
 "
 
-SRCREV_rkbin = "8350c611251e50410eabb29f7df66083efeb9551"
-SRCREV_tools = "b19019288c36645ab792f3129bb638df308152d3"
+SRCREV_rkbin = "${YUNMY_SDK_VERSION}"
+SRCREV_tools = "${YUNMY_SDK_VERSION}"
 SRCREV_FORMAT ?= "rkbin_tools"
 
 S = "${WORKDIR}/git"

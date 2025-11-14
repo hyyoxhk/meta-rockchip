@@ -10,9 +10,9 @@ LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a
 inherit local-git
 
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/external/libmali.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master; \
+	git://${YUNMY_GITLAB_URL}/board/external/libmali.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH}; \
 "
-SRCREV = "c45e68f5f440d4c0590fdfcdee290b6d591af51e"
+SRCREV = "${YUNMY_SDK_VERSION}"
 S = "${WORKDIR}/git"
 
 DEPENDS = "coreutils-native libdrm"

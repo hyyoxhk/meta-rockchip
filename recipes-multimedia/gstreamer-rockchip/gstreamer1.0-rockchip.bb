@@ -14,8 +14,8 @@ DEPENDS:append = " gstreamer1.0-plugins-base"
 
 inherit local-git
 
-SRCREV = "aab4a4210b1e8cf1f8fa26f335f93110c39b4dbc"
-SRC_URI = "git://${YUNMI_GITLAB_URL}/board/external/gstreamer-rockchip.git;protocol=${YUNMI_GITLAB_PROTOCOL};branch=master"
+SRCREV = "${YUNMY_SDK_VERSION}"
+SRC_URI = "git://${YUNMY_GITLAB_URL}/board/external/gstreamer-rockchip.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH}"
 
 S = "${WORKDIR}/git"
 

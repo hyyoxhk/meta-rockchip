@@ -15,9 +15,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit local-git
 
-SRCREV = "8800eff20f37bcdca9220825e3ef912c9170175d"
+SRCREV = "${YUNMY_SDK_VERSION}"
 SRC_URI = " \
-	git://${YUNMI_GITLAB_URL}/board/external/camera_engine_rkaiq.git;protocol=${YUNMI_GITLAB_PROTOCOL};nobranch=1;branch=master; \
+	git://${YUNMY_GITLAB_URL}/board/external/camera_engine_rkaiq.git;protocol=${YUNMY_GITLAB_PROTOCOL};nobranch=1;branch=${YUNMY_SDK_BRANCH}; \
 	file://rkaiq_daemons.sh \
 	file://ov13850_CMK-CT0116_Largan-50013A1.json \
 "

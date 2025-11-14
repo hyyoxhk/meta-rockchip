@@ -5,8 +5,8 @@ DEPENDS:append = " automake-native autoconf-native util-macros-native font-util-
 
 inherit local-git
 
-SRCREV = "913d7ec2544571937314804697d145f980bfc54e"
-SRC_URI:append = " git://${YUNMI_GITLAB_URL}/board/external/xserver.git;protocol=${YUNMI_GITLAB_PROTOCOL};nobranch=1;branch=master;"
+SRCREV = "${YUNMY_SDK_VERSION}"
+SRC_URI:append = " git://${YUNMY_GITLAB_URL}/board/external/xserver.git;protocol=${YUNMY_GITLAB_PROTOCOL};nobranch=1;branch=${YUNMY_SDK_BRANCH};"
 SRC_URI:remove = "https://www.x.org/releases//individual/xserver/xorg-server-${PV}.tar.bz2"
 S = "${WORKDIR}/git"
 

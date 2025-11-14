@@ -26,6 +26,12 @@ ROCKCHIP_KERNEL_IMAGES ?= "1"
 # Prefer using Rockchip BSP kernel 5.10
 PREFERRED_VERSION_linux-rockchip ?= "5.10%"
 LINUXLIBCVERSION ?= "5.10-custom%"
+
+YUNMY_GITLAB_URL = "git@192.168.1.200:2222"
+YUNMY_GITLAB_PROTOCOL = "ssh"
+YUNMY_SDK_BRANCH = "upstream/linux-5.10-gen-rkr6"
+YUNMY_SDK_VERSION = "linux-5.10-gen-rkr6"
+
 # Avoid old kernel version error
 OLDEST_KERNEL := "${@d.getVar('LINUXLIBCVERSION').split('-')[0]}"
 
