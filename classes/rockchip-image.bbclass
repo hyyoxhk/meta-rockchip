@@ -37,6 +37,7 @@ do_gen_rkupdateimg() {
 		NAME=$(echo ${line} | cut -f 7 -d ' ')
 		START=$(echo ${line} | cut -f 2 -d ' ')
 		END=$(echo ${line} | cut -f 3 -d ' ')
+		SIZE=$(expr ${END} - ${START} + 1)
 		printf "0x%08x@0x%08x(%s)," "${SIZE}" "${START}" "${NAME}" >> "${build_updateimg}/parameter"
 		cp "${WORKDIR}/build-wic/"*.direct.p${part_i} "${build_updateimg}/${NAME}.img"
 	done
