@@ -19,11 +19,12 @@ PV = "2017.09"
 
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 
-SRCREV = "947908810939709ccf565b624889a5ecf22061cc"
-SRCREV_rkbin = "8350c611251e50410eabb29f7df66083efeb9551"
+SRCREV = "27928b7b5e9deb6c9afe088910d159d12c2cc559"
+SRCREV_rkbin = "14f0a5e1ff45c0b02990ef9508f25bcf750f4956"
+
 SRC_URI = " \
 	git://${YUNMY_GITLAB_URL}/board/u-boot.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=main; \
-	git://${YUNMY_GITLAB_URL}/board/rkbin.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=master;name=rkbin;destsuffix=rkbin; \
+	git://${YUNMY_GITLAB_URL}/board/rkbin.git;protocol=${YUNMY_GITLAB_PROTOCOL};branch=${YUNMY_SDK_BRANCH};name=rkbin;destsuffix=rkbin; \
 	file://fw_env.config \
 "
 
