@@ -539,9 +539,9 @@ fitimage_assemble() {
 	#
 	KERNEL_IMAGE_PATH="arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 
-	if [ "$KERNEL_IMAGETYPE" = "Image.lz4" ]; then
+	if [ "${KERNEL_IMAGETYPE}" = "Image.lz4" ]; then
 		linux_comp="lz4"
-	elif [ "$KERNEL_IMAGETYPE" = "Image" ]; then
+	elif [ "${KERNEL_IMAGETYPE}" = "Image" ]; then
 		linux_comp="none"
 	fi
 
