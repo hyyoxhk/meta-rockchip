@@ -7,6 +7,7 @@
 
 part   --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
 part   --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --offset 8M
+part   --source rawcopy --sourceparams="file=boot.img" --part-name boot --fixed-size 64M
 part   --source bootimg-partition  --fstype=vfat --part-name bootfs --active --fixed-size 100M
 part / --source rootfs --fstype=ext4 --part-name rootfs_a
 part   --source rootfs --fstype=ext4 --part-name rootfs_b
