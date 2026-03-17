@@ -407,7 +407,7 @@ fitimage_emit_section_config() {
 	if [ -n "$config_id" ]; then
 		conf_desc="$conf_desc${sep}multi"
 		sep=", "
-		multi_line="multi = \"multi-$config_id\";"
+		multi_line="multi = \"resource-$config_id\";"
 	fi
 
 	if [ -n "$bootscr_id" ]; then
