@@ -10,9 +10,7 @@ UBOOT_EXTLINUX_DEFAULT_LABEL = "ym-sbc-rk3588"
 UBOOT_EXTLINUX_TIMEOUT = "20"
 
 UBOOT_EXTLINUX_MENU_DESCRIPTION:ym-sbc-rk3588 = "ym-sbc-rk3588"
-UBOOT_EXTLINUX_KERNEL_IMAGE:ym-sbc-rk3588 = "/Image"
-UBOOT_EXTLINUX_FDT:ym-sbc-rk3588 = "/ym-sbc-rk3588.dtb"
-UBOOT_EXTLINUX_INITRD:ym-sbc-rk3588 = "/initrd.img"
+UBOOT_EXTLINUX_KERNEL_IMAGE:ym-sbc-rk3588 = "/boot.img"
 
 # Define additional kernel arguments
 UBOOT_EXTLINUX_ROOT:ym-sbc-rk3588 = "LABEL=${LABEL} root=${bootroot}"
