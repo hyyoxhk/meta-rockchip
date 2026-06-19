@@ -541,6 +541,8 @@ fitimage_assemble() {
 
 	if [ "${KERNEL_IMAGETYPE}" = "Image.lz4" ]; then
 		linux_comp="lz4"
+	elif [ "${KERNEL_IMAGETYPE}" = "Image.zst" ]; then
+		linux_comp="zstd"
 	elif [ "${KERNEL_IMAGETYPE}" = "Image" ]; then
 		linux_comp="none"
 	fi
