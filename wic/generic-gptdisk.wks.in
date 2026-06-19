@@ -5,11 +5,12 @@
 
 # 0~32K: gpt
 
-part   --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
-part   --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --align 8192
-part   --source bootimg-partition  --fstype=vfat --label bootfs --active --fixed-size 100M
-part / --source rootfs --fstype=ext4 --label rootfs1 --fixed-size 1024M
-part   --source rootfs --fstype=ext4 --label rootfs2 --fixed-size 1024M
-part   --source rawcopy --sourceparams="file=smart-image-userfs-${DISTRO}-${MACHINE}.ext4" --fstype=ext4 --label userfs --fixed-size 64M
+part --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
+part --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --offset 2M
+part --source rawcopy --sourceparams="file=boot.img" --part-name bootA --align 4 --fixed-size 64M
+part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsA --align 8192 --extra-space 64M
+part --source rawcopy --sourceparams="file=boot.img" --part-name bootB --align 4 --fixed-size 64M
+part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsB --align 8192 --extra-space 64M
+part --source rootfs --rootfs-dir=${IMAGE_ROOTFS}/usr/local --fstype=ext4 --part-name userfs --align 8192 --fixed-size 64M --extra-space 0
 
 bootloader --ptable gpt
