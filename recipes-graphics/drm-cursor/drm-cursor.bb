@@ -12,7 +12,7 @@ inherit local-git
 DEPENDS = "libdrm virtual/libgles2 virtual/libgbm"
 
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/external/drm-cursor.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
+	git://gitlab.com/firefly-linux/external/drm-cursor.git;protocol=https;branch=${FIREFLY_SDK_BRANCH}; \
 "
 SRCREV = "${FIREFLY_SDK_VERSION}"
 S = "${WORKDIR}/git"

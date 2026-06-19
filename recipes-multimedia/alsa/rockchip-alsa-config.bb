@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://NOTICE;md5=9645f39e9db895a4aa6e02cb57294595"
 inherit local-git
 
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/external/alsa-config.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
+	git://gitlab.com/firefly-linux/external/alsa-config.git;protocol=https;branch=${FIREFLY_SDK_BRANCH}; \
 "
 SRCREV = "${FIREFLY_SDK_VERSION}"
 S = "${WORKDIR}/git"

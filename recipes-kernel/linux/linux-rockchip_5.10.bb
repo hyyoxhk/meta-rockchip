@@ -9,7 +9,7 @@ inherit local-git
 SRCREV = "93f1dde055919b078f8954c3dd0d8d00e07e4811"
 
 SRC_URI = " \
-	git://gitlab.com/hyyoxhk/linux-rk.git;protocol=https;nobranch=1;branch=main; \
+	git://gitlab.com/hyyoxhk/linux-rk.git;protocol=https;branch=main; \
 	file://${THISDIR}/files/cgroups.cfg \
 "
 

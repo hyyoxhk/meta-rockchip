@@ -17,7 +17,7 @@ inherit local-git
 
 SRCREV = "${FIREFLY_SDK_VERSION}"
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/external/camera_engine_rkaiq.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
+	git://gitlab.com/firefly-linux/external/camera_engine_rkaiq.git;protocol=https;branch=${FIREFLY_SDK_BRANCH}; \
 	file://rkaiq_daemons.sh \
 "
 

@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a
 inherit local-git
 
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/external/libmali.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
+	git://gitlab.com/firefly-linux/external/libmali.git;protocol=https;branch=${FIREFLY_SDK_BRANCH}; \
 "
 SRCREV = "${FIREFLY_SDK_VERSION}"
 S = "${WORKDIR}/git"

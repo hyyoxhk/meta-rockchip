@@ -14,7 +14,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit local-git
 
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/external/linux-rga.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH}; \
+	git://gitlab.com/firefly-linux/external/linux-rga.git;protocol=https;branch=${FIREFLY_SDK_BRANCH}; \
 "
 SRCREV = "${FIREFLY_SDK_VERSION}"
 S = "${WORKDIR}/git"

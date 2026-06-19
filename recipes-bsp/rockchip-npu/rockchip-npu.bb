@@ -12,7 +12,7 @@ RDEPENDS:${PN} = "bash"
 inherit local-git
 
 SRC_URI = " \
-	git://gitlab.com/firefly-linux/external/rknpu-fw.git;protocol=https;nobranch=1;branch=rk3399pro/firefly; \
+	git://gitlab.com/firefly-linux/external/rknpu-fw.git;protocol=https;branch=rk3399pro/firefly; \
 	file://rockchip-npu.sh \
 "
 SRCREV = "cd6b2f46ad5e9c8d10e56cc668ee234fb255feac"

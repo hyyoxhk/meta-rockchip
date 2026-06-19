@@ -20,7 +20,7 @@ PV = "2017.09"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 
 SRCREV = "16a7c3683561f59c314f86485d9559005b5afbed"
-SRCREV_rkbin = "${FIREFLY_SDK_VERSION}"
+SRCREV_rkbin = "3614a5114200cc12d71efb2172ea2aef302b5b7c"
 SRC_URI = " \
 	git://gitlab.com/hyyoxhk/uboot-rk.git;protocol=https;branch=main;name=uboot; \
 	git://gitlab.com/firefly-linux/rkbin.git;protocol=https;branch=${FIREFLY_SDK_BRANCH};name=rkbin;destsuffix=rkbin; \

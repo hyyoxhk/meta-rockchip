@@ -15,7 +15,7 @@ DEPENDS:append = " gstreamer1.0-plugins-base"
 inherit local-git
 
 SRCREV = "${FIREFLY_SDK_VERSION}"
-SRC_URI = "git://gitlab.com/firefly-linux/external/gstreamer-rockchip.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH};"
+SRC_URI = "git://gitlab.com/firefly-linux/external/gstreamer-rockchip.git;protocol=https;branch=${FIREFLY_SDK_BRANCH};"
 
 S = "${WORKDIR}/git"
 

@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = " \
 inherit local-git
 
 SRCREV = "${FIREFLY_SDK_VERSION}"
-SRC_URI = "git://gitlab.com/firefly-linux/external/mpp.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH};"
+SRC_URI = "git://gitlab.com/firefly-linux/external/mpp.git;protocol=https;branch=${FIREFLY_SDK_BRANCH};"
 
 S = "${WORKDIR}/git"
 

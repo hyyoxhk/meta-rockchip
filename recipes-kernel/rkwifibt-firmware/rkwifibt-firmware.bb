@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://${RKBASE}/licenses/LICENSE.rockchip;md5=d63890e209bf0
 inherit local-git
 
 SRCREV = "${FIREFLY_SDK_VERSION}"
-SRC_URI = "git://gitlab.com/firefly-linux/external/rkwifibt.git;protocol=https;nobranch=1;branch=${FIREFLY_SDK_BRANCH};"
+SRC_URI = "git://gitlab.com/firefly-linux/external/rkwifibt.git;protocol=https;branch=${FIREFLY_SDK_BRANCH};"
 S = "${WORKDIR}/git"
 
 inherit allarch deploy
