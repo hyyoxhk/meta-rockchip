@@ -7,10 +7,16 @@
 
 part --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
 part --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --offset 2M
-part --source rawcopy --sourceparams="file=boot.img" --part-name bootA --align 4 --fixed-size 64M
-part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsA --align 8192 --extra-space 64M
-part --source rawcopy --sourceparams="file=boot.img" --part-name bootB --align 4 --fixed-size 64M
-part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsB --align 8192 --extra-space 64M
-part --source rootfs --rootfs-dir=${IMAGE_ROOTFS}/usr/local --fstype=ext4 --part-name userfs --align 8192 --fixed-size 64M --extra-space 0
+
+#part --source rawcopy --sourceparams="file=u-boot-initial-env" --align 4096 --fixed-size 1M --no-table
+part /boot --source bootimg-partition  --fstype=vfat --label boot --ondisk mmcblk --active --align 4096 --fixed-size 64M
+
+part --source rawcopy --sourceparams="file=boot.img" --part-name kernelA --align 4096 --fixed-size 64M
+part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsA --align 8192 --fixed-size ${RK_ROOTFS_AB_PART_SIZE}
+
+part --source rawcopy --sourceparams="file=boot.img" --part-name kernelB --align 4096 --fixed-size 64M
+part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsB --align 8192 --fixed-size ${RK_ROOTFS_AB_PART_SIZE}
+
+part --source rootfs --rootfs-dir=${IMAGE_ROOTFS}/usr/local --fstype=ext4 --part-name data --align 8192 --fixed-size 32M
 
 bootloader --ptable gpt

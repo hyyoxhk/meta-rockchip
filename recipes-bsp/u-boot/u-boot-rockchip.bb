@@ -25,6 +25,7 @@ SRC_URI = " \
 	git://gitlab.com/hyyoxhk/uboot-rk.git;protocol=https;branch=main;name=uboot; \
 	git://gitlab.com/firefly-linux/rkbin.git;protocol=https;branch=${FIREFLY_SDK_BRANCH};name=rkbin;destsuffix=rkbin; \
 	file://fw_env.config \
+	file://boot.cmd \
 "
 
 SRCREV_FORMAT = "default_rkbin"
@@ -33,6 +34,10 @@ DEPENDS:append = " ${PYTHON_PN}-native"
 
 # Needed for packing BSP u-boot
 DEPENDS:append = " coreutils-native ${PYTHON_PN}-pyelftools-native"
+
+UBOOT_ENV  = "boot"
+UBOOT_ENV_SUFFIX = "scr"
+UBOOT_ENV_SRC_SUFFIX = "cmd"
 
 do_configure:prepend() {
 	# Make sure we use /usr/bin/env ${PYTHON_PN} for scripts

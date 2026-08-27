@@ -1,10 +1,10 @@
 inherit uboot-config
 require conf/image-fitimage.conf
 
-UBOOT_DTB_LOADADDRESS ?= "0xffffff00"
-UBOOT_ENTRYPOINT ?= "0xffffff01"
-UBOOT_LOADADDRESS ?= "0xffffff01"
-UBOOT_RD_LOADADDRESS ?= "0xffffff02"
+UBOOT_DTB_LOADADDRESS = "0xffffff00"
+UBOOT_ENTRYPOINT = "0xffffff01"
+UBOOT_LOADADDRESS = "0xffffff01"
+UBOOT_RD_LOADADDRESS = "0xffffff02"
 
 FIT_ADDRESS_CELLS ?= "1"
 
@@ -316,9 +316,9 @@ fitimage_emit_section_resource() {
 	resource_sign_keyname="${UBOOT_SIGN_IMG_KEYNAME}"
 
 	cat << EOF >> $1
-                resource-$2 {
+                resource {
                         description = "Resource";
-                        data = /incbin/("$3");
+                        data = /incbin/("$2");
                         type = "multi";
                         arch = "${UBOOT_ARCH}";
                         compression = "none";
@@ -331,7 +331,7 @@ EOF
 	if [ "${UBOOT_SIGN_ENABLE}" = "1" -a "${FIT_SIGN_INDIVIDUAL}" = "1" -a -n "$resource_sign_keyname" ] ; then
 		sed -i '$ d' $1
 		cat << EOF >> $1
-                        signature-1 {
+                        signature {
                                 algo = "$resource_csum,$resource_sign_algo";
                                 key-name-hint = "$resource_sign_keyname";
                         };
@@ -407,7 +407,7 @@ fitimage_emit_section_config() {
 	if [ -n "$config_id" ]; then
 		conf_desc="$conf_desc${sep}multi"
 		sep=", "
-		multi_line="multi = \"resource-$config_id\";"
+		multi_line="multi = \"resource\";"
 	fi
 
 	if [ -n "$bootscr_id" ]; then
@@ -591,7 +591,7 @@ fitimage_assemble() {
 	#
 	if [ -n "${RESOURCE_PATH}" ] && [ -e "${RESOURCE_PATH}" ]; then
 		resourcecount=1
-		fitimage_emit_section_resource $1 $resourcecount "${RESOURCE_PATH}"
+		fitimage_emit_section_resource $1 "${RESOURCE_PATH}"
 	fi
 
 	fitimage_emit_section_maint $1 sectend

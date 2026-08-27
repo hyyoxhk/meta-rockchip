@@ -1,0 +1,59 @@
+software =
+{
+    version = "@@IMAGE_VERSION@@";
+    description = "Firmware update for @@MACHINE@@ Project";
+
+    @@MACHINE@@ = {
+        hardware-compatibility: ["@@HW_VERSION@@"];
+        stable : {
+            copyA : {
+                images: (
+                        {
+                                filename = "@@SWUPDATE_KERNEL_IMAGE@@";
+                                type = "raw";
+                                sha256 = "$swupdate_get_sha256(@@SWUPDATE_KERNEL_IMAGE@@)";
+                                installed-directly = true;
+                                device = "/dev/disk/by-partlabel/kernelA";
+                        },
+                        {
+                                filename = "@@SWUPDATE_ROOTFS_FILENAME@@";
+                                type = "raw";
+                                sha256 = "$swupdate_get_sha256(@@SWUPDATE_ROOTFS_FILENAME@@)";
+                                installed-directly = true;
+                                device = "/dev/disk/by-partlabel/rootfsA";
+                        }
+                );
+                scripts: (
+                        {
+                                filename = "emmcsetup.lua";
+                                type = "lua";
+                        }
+                );
+            };
+            copyB : {
+                images: (
+                        {
+                                filename = "@@SWUPDATE_KERNEL_IMAGE@@";
+                                type = "raw";
+                                sha256 = "$swupdate_get_sha256(@@SWUPDATE_KERNEL_IMAGE@@)";
+                                installed-directly = true;
+                                device = "/dev/disk/by-partlabel/kernelB";
+                        },
+                        {
+                                filename = "@@SWUPDATE_ROOTFS_FILENAME@@";
+                                type = "raw";
+                                sha256 = "$swupdate_get_sha256(@@SWUPDATE_ROOTFS_FILENAME@@)";
+                                installed-directly = true;
+                                device = "/dev/disk/by-partlabel/rootfsB";
+                        }
+                );
+                scripts: (
+                        {
+                                filename = "emmcsetup.lua";
+                                type = "lua";
+                        }
+                );
+            };
+        };
+    }
+}

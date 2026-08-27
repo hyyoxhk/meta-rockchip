@@ -6,7 +6,6 @@ require conf/machine/include/soc-family.inc
 RK_WIFIBT_RRECOMMENDS ?= ""
 MACHINE_EXTRA_RRECOMMENDS:append = " \
 	${RK_WIFIBT_RRECOMMENDS} \
-	kernel-modules \
 "
 
 RK_ISP_VERSION := ""
@@ -17,6 +16,7 @@ KBUILD_DEFCONFIG ?= "rockchip_linux_defconfig"
 MACHINEOVERRIDES .= ":rockchip"
 
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-rockchip"
+PREFERRED_VERSION_u-boot-tools = "2017.09"
 
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-rockchip"
 
