@@ -5,11 +5,16 @@
 
 # 0~32K: gpt
 
-part --source rawcopy --sourceparams="file=idblock.img" --align 32 --no-table
-part --source rawcopy --sourceparams="file=uboot.img" --part-name uboot --offset 2M
+part loader1   --offset 64s    --fixed-size 3552K  --part-name loader1   --source rawcopy --sourceparams="file=${SPL_BINARY}"
+#part v_storage --offset 7168s  --fixed-size 256K   --part-name v_storage
+#part reserved  --offset 7680s  --fixed-size 192K   --part-name reserved1
+#part reserved1 --offset 8064s  --fixed-size 32K    --part-name reserved2
+#part uboot_env --offset 8128s  --fixed-size 32K    --part-name uboot_env ${RK_UBOOT_ENV}
+#part reserved2 --offset 8192s  --fixed-size 4096K  --part-name reserved3
+part loader2   --offset 16384s --fixed-size 4096K  --part-name loader2   --source rawcopy --sourceparams="file=u-boot.${UBOOT_SUFFIX}"
+#part atf       --offset 24576s --fixed-size 4096K  --part-name atf
 
-#part --source rawcopy --sourceparams="file=u-boot-initial-env" --align 4096 --fixed-size 1M --no-table
-part /boot --source bootimg-partition  --fstype=vfat --label boot --ondisk mmcblk --active --align 4096 --fixed-size 64M
+part /boot --source bootimg-partition  --fstype=vfat --label boot --ondisk mmcblk0 --active --align 4096 --fixed-size 64M
 
 part --source rawcopy --sourceparams="file=boot.img" --part-name kernelA --align 4096 --fixed-size 64M
 part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity" --part-name rootfsA --align 8192 --fixed-size ${RK_ROOTFS_AB_PART_SIZE}

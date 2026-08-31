@@ -15,8 +15,8 @@ KERNEL_IMAGETYPE ?= "Image"
 KBUILD_DEFCONFIG ?= "rockchip_linux_defconfig"
 MACHINEOVERRIDES .= ":rockchip"
 
-PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-rockchip"
-PREFERRED_VERSION_u-boot-tools = "2017.09"
+PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot"
+# PREFERRED_VERSION_u-boot-tools = "2017.09"
 
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-rockchip"
 

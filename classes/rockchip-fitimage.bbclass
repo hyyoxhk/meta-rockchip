@@ -1,10 +1,10 @@
 inherit uboot-config
 require conf/image-fitimage.conf
 
-UBOOT_DTB_LOADADDRESS = "0xffffff00"
-UBOOT_ENTRYPOINT = "0xffffff01"
-UBOOT_LOADADDRESS = "0xffffff01"
-UBOOT_RD_LOADADDRESS = "0xffffff02"
+UBOOT_DTB_LOADADDRESS = "0x0e000000"
+UBOOT_ENTRYPOINT = "0x06000000"
+UBOOT_LOADADDRESS = "0x06000000"
+UBOOT_RD_LOADADDRESS = "0x10000000"
 
 FIT_ADDRESS_CELLS ?= "1"
 
@@ -148,7 +148,7 @@ fitimage_emit_section_kernel() {
                         data = /incbin/("$3");
                         type = "${UBOOT_MKIMAGE_KERNEL_TYPE}";
                         arch = "${UBOOT_ARCH}";
-                        os = "linux";
+                        os = "efi";
                         compression = "$4";
                         load = <${UBOOT_LOADADDRESS}>;
                         entry = <$ENTRYPOINT>;

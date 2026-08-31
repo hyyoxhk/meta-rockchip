@@ -4,8 +4,8 @@ test -n "${BOOT_ORDER}" || env set BOOT_ORDER "A B"
 test -n "${BOOT_A_LEFT}" || env set BOOT_A_LEFT 0x3
 test -n "${BOOT_B_LEFT}" || env set BOOT_B_LEFT 0x3
 
-if test x${kernelpartA} = x; then env set kernelpartA 3; fi
-if test x${kernelpartB} = x; then env set kernelpartB 5; fi
+if test x${kernelpartA} = x; then env set kernelpartA 4; fi
+if test x${kernelpartB} = x; then env set kernelpartB 6; fi
 if test x${fit_blkcnt}  = x; then env set fit_blkcnt 0x10000; fi
 
 env set rootparm
@@ -38,7 +38,7 @@ for BOOTSLOT in "${BOOT_ORDER}"; do
 done
 
 if test -n "${rootparm}"; then
-	env set bootargs "${bootargsbase} root=${rootparm} quiet rootwait slot=${SLOT}"
+	env set bootargs "${bootargsbase} root=${rootparm} rootwait slot=${SLOT}"
 	env save
 else
 	echo "No valid slot found. Resetting tries to 3"
